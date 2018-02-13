@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { dataService } from './data.service';
+// import { Car } from './car';
+import { Car } from './test';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Mock backend vs rest API vs SQL!';
+
+  constructor() { }
+  
+  ngOnInit() {
+  }
 }

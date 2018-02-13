@@ -1,0 +1,41 @@
+<h2>Mock-backend for cars</h2>
+<label>Plate:</label>
+<input #licence value="MOCK-999" />
+<label>Brand:</label>
+<input #brand value="Hyundai" />
+<label>Model:</label>
+<input #model value="Coupe" />
+<label>Color:</label>
+<input #color value="black" />
+<label>Year:</label>
+<input #year value="2006" />
+<button (click)="addEvent(licence.value,
+                          brand.value, 
+                          model.value, 
+                          color.value, 
+                          year.value);
+                          licence.value='';
+                          brand.value='';
+                          model.value='';
+                          color.value='';
+                          year.value='';">Add</button>
+<span>{{ mockCars[0].licence }}</span>
+<table>
+  <tr>
+    <th>Plate</th>
+    <th>Brand</th> 
+    <th>Model</th>
+    <th>Color</th>
+    <th>Year</th>
+    <th>Del</th>
+  </tr>
+  <tr *ngFor='let car of mockCars'>
+    <td>{{ car.licence }}</td>
+    <td>{{ car.brand }}</td>
+    <td>{{ car.model }}</td>
+    <td>{{ car.color }}</td>
+    <td>{{ car.year }}</td>
+    <td><button (click)="deleteEvent(car)">Del</button></td>
+    <!-- <td><a href="#" class="close"></a></td> -->
+  </tr>
+</table>

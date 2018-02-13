@@ -1,0 +1,19 @@
+<h2>SQL database for cars</h2>
+<p *ngIf="!sqlcars">Run node backend first for middleware server!</p>
+
+<table>
+  <tr>
+    <th>Plate</th>
+    <th>Brand</th> 
+    <th>Model</th>
+    <th>Color</th>
+    <th>Year</th>
+  </tr>
+  <tr *ngFor='let car of sqlcars'>
+    <td>{{ car.licence }}</td>
+    <td>{{ car.brand }}</td>
+    <td>{{ car.model }}</td>
+    <td>{{ car.color }}</td>
+    <td>{{ car.year }}</td>
+  </tr>
+</table>

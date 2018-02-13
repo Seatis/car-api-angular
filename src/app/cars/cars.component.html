@@ -1,0 +1,48 @@
+<h2>Glitch API for cars</h2>
+
+<button (click)="deleteCar('Audi')">DELETE</button>
+
+<label>Plate:</label>
+<input #licence value="API-999" />
+<label>Brand:</label>
+<input #brand value="Hyundai" />
+<label>Model:</label>
+<input #model value="Coupe" />
+<label>Color:</label>
+<input #color value="black" />
+<label>Year:</label>
+<input #year value="2006" />
+<button (click)="postCar(licence.value,
+                          brand.value, 
+                          model.value, 
+                          color.value, 
+                          year.value);
+                          licence.value='';
+                          brand.value='';
+                          model.value='';
+                          color.value='';
+                          year.value='';">Add</button>
+
+<!-- <span><strong>{{ testCar }}</strong></span> -->
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Plate</th>
+    <th>Brand</th> 
+    <th>Model</th>
+    <th>Color</th>
+    <th>Year</th>
+    <th>Del</th>
+  </tr>
+  <tr *ngFor='let car of cars'>
+    <td>{{ car.id }}</td>
+    <td>{{ car.licence }}</td>
+    <td>{{ car.brand }}</td>
+    <td>{{ car.model }}</td>
+    <td>{{ car.color }}</td>
+    <td>{{ car.year }}</td>
+    <td><button (click)="deleteCar(car.id)">Del</button></td>
+  </tr>
+</table>
+<a href="#" (click)='test();'>TEST</a>
